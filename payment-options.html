@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Options - Planet WISE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            transition: transform 0.3s ease-in-out;
+            z-index: 1000;
+        }
+        
+        .header--hidden {
+            transform: translateY(-100%);
+        }
+
+        .payment-container {
+            max-width: 1200px;
+            margin: 6rem auto 4rem;
+            padding: 2rem;
+            background-color: #fff8dc;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .payment-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #004d00;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .payment-options {
+            display: flex;
+            flex-direction: row;
+            gap: 3rem;
+            align-items: stretch;
+            justify-content: center;
+            margin: 4rem auto;
+        }
+
+        .payment-option {
+            width: 100%;
+            max-width: 400px;
+            padding: 3rem;
+            text-align: center;
+            background: white;
+            border: 2px solid #d0e8d0;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .payment-option::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #004d00, #006600);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .payment-option:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        .payment-option:hover::before {
+            opacity: 1;
+        }
+
+        .payment-option h3 {
+            font-size: 2rem;
+            margin: 1.5rem 0;
+            color: #004d00;
+            font-weight: 700;
+        }
+
+        .payment-option p {
+            font-size: 1.2rem;
+            color: #444;
+            line-height: 1.6;
+            margin-top: 1rem;
+        }
+
+        .icon {
+            width: 80px;
+            height: 80px;
+            color: #004d00;
+            transition: transform 0.3s ease;
+        }
+
+        .payment-option:hover .icon {
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            .payment-options {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .payment-option {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header bg-primary text-primary-foreground shadow-lg">
+        <div class="container">
+            <a href="index.html" class="logo">Planet WISE</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="payment-container">
+            <h1 class="payment-title">Choose Your Funding Method</h1>
+            <div class="payment-options">
+                <div class="payment-option" onclick="window.location.href='contribute.html'">
+                    <i data-lucide="heart-handshake" class="icon"></i>
+                    <h3>Contribute</h3>
+                    <p>Support this initiative and get updates about the project's progress. Your contribution will be acknowledged and you'll receive regular updates on the impact.</p>
+                </div>
+                <div class="payment-option" onclick="window.location.href='anonymous-payment.html'">
+                    <i data-lucide="shield" class="icon"></i>
+                    <h3>Send Funds Anonymously</h3>
+                    <p>Make an anonymous contribution to support the cause. Your privacy is guaranteed while making a meaningful impact on the project's success.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-primary text-primary-foreground">
+        <div class="container">
+            <p>&copy; 2023 Planet WISE. All rights reserved.</p>
+            <p>Empowering sustainable development through collaboration and innovation.</p>
+        </div>
+    </footer>
+
+    <script src="styles.js"></script>
+    <script>
+        lucide.createIcons();
+
+        let lastScrollY = window.scrollY;
+
+        window.addEventListener("scroll", () => {
+            const header = document.querySelector(".header");
+            if (lastScrollY < window.scrollY) {
+                header.classList.add("header--hidden");
+            } else {
+                header.classList.remove("header--hidden");
+            }
+            lastScrollY = window.scrollY;
+        });
+    </script>
+</body>
+</html>

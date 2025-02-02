@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organization Options - Planet WISE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="initops.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .page-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #004d00;
+            margin-bottom: 2rem;
+            padding-top: 100px;
+            text-align: center;
+        }
+
+        .options-grid {
+            max-width: 1200px;
+            margin: 4rem auto;
+            display: flex;
+            flex-direction: row;
+            gap: 2rem;
+            align-items: stretch;
+            justify-content: center;
+        }
+
+        .option-card {
+            width: 100%;
+            max-width: 350px;
+            padding: 3rem;
+            text-align: center;
+            background: #fff8dc;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .option-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+            background: #ffefba;
+        }
+
+        .option-card h2 {
+            color: #004d00;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .option-card p {
+            color: #444;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .icon {
+            width: 64px;
+            height: 64px;
+            color: #004d00;
+            margin-bottom: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="bg-primary text-primary-foreground shadow-lg">
+        <div class="container">
+            <a href="index.html" class="logo">Planet WISE</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <!--<li><a href="#">About</a></li>-->
+                   <!--<li><a href="login.html">Login</a></li>-->>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1 class="page-title" style="color: rgb(255, 255, 255);">Organization</h1>
+        <div class="options-grid">
+            <a href="reg-org.html" class="option-card">
+                <i data-lucide="building" class="icon"></i>
+                <h2>Register in Our Directory</h2>
+                <p>Add your organization to our global directory of sustainable development actors.</p>
+            </a>
+            <a href="sdg-places.html" class="option-card">
+                <i data-lucide="globe" class="icon"></i>
+                <h2>Live SDG Tracker</h2>
+                <p>Monitor and contribute to global progress on the Sustainable Development Goals.</p>
+            </a>
+        </div>
+    </main>
+
+    <footer class="bg-primary text-primary-foreground">
+        <div class="container">
+            <p>&copy; 2023 Planet WISE. All rights reserved.</p>
+            <p>Empowering sustainable development through collaboration and innovation.</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

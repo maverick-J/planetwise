@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organization Registration - Planet WISE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="details.css">
+    <style>
+        .registration-container {
+            max-width: 800px;
+            margin: 4rem auto;
+            padding: 2rem;
+            background: #fff8dc;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .page-title {
+            color: #004d00;
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .form-section {
+            margin-bottom: 2rem;
+            background: #e8f4f8;
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .form-section h2 {
+            color: #004d00;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #004d00;
+            padding-bottom: 0.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #004d00;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem 1.25rem;
+            border: 2px solid #004d00;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: 'Poppins', sans-serif;
+            background: white;
+            transition: all 0.2s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            box-shadow: 0 4px 8px rgba(0, 77, 0, 0.2);
+            transform: translateY(-2px);
+            border-color: #006600;
+        }
+
+        .checkbox-group {
+            margin: 2rem 0;
+            padding: 1rem;
+            background: #e8f4f8;
+            border-radius: 8px;
+        }
+
+        .checkbox-group label {
+            color: #004d00;
+            margin-left: 0.5rem;
+            font-weight: 500;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            transform: scale(1.2);
+        }
+
+        .submit-btn {
+            background: #004d00;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: 600;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background: #006600;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 77, 0, 0.2);
+        }
+
+        /* Header scroll behavior */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            transition: transform 0.3s ease;
+            z-index: 1000;
+        }
+
+        header.hidden {
+            transform: translateY(-100%);
+        }
+
+        body {
+            padding-top: 60px; /* Add padding to account for fixed header */
+        }
+    </style>
+</head>
+<body>
+    <header class="bg-primary text-primary-foreground shadow-lg">
+        <div class="container">
+            <a href="index.html" class="logo">Planet WISE</a>
+            <nav>
+                <ul>=-  
+                    <li><a href="index.html">Home</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="registration-container">
+            <h1 class="page-title">Organization Registration</h1>
+            <p style="text-align: center; margin-bottom: 2rem; color: #004d00;">Please complete all fields to register your organization with Planet WISE</p>
+
+            <form id="orgRegistrationForm">
+                <div class="form-section">
+                    <h2>Organization Information</h2>
+                    <div class="form-group">
+                        <label for="orgName">Organization Name</label>
+                        <input type="text" id="orgName" placeholder="Enter organization's full legal name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="placeOrigin">Place of Origin</label>
+                        <input type="text" id="placeOrigin" placeholder="City, Country" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="foundingDate">Date of Establishment</label>
+                        <input type="date" id="foundingDate" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="orgAim">Organization's Mission & Goals</label>
+                        <textarea id="orgAim" rows="4" placeholder="Describe your organization's primary mission and objectives" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="regNumber">Registration/License Number</label>
+                        <input type="text" id="regNumber" placeholder="Official registration number" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="prevProjects">Previous Projects/Achievements</label>
+                        <textarea id="prevProjects" rows="3" placeholder="List major projects and achievements" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="references">Professional References</label>
+                        <textarea id="references" rows="3" placeholder="Name, Organization, Contact Information" required></textarea>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h2>Primary Contact Information</h2>
+                    <div class="form-group">
+                        <label for="contactName">Full Name</label>
+                        <input type="text" id="contactName" placeholder="First and Last Name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contactPosition">Position in Organization</label>
+                        <input type="text" id="contactPosition" placeholder="Your role" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contactEmail">Email Address</label>
+                        <input type="email" id="contactEmail" placeholder="professional@email.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contactPhone">Phone Number</label>
+                        <input type="tel" id="contactPhone" placeholder="+1 (234) 567-8900" required>
+                    </div>
+                </div>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="termsAgree" required>
+                    <label for="termsAgree">I confirm that all information provided is accurate and I agree to Planet WISE's terms and conditions</label>
+                </div>
+
+                <button type="submit" class="submit-btn">Submit Registration</button>
+            </form>
+        </div>
+    </main>
+
+    <footer class="bg-primary text-primary-foreground">
+        <div class="container">
+            <p>&copy; 2023 Planet WISE. All rights reserved.</p>
+            <p>Empowering sustainable development through collaboration and innovation.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('orgRegistrationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for registering! Your organization details will be reviewed by our team and we will contact you via email within 2-3 business days.');
+            this.reset();
+        });
+
+        // Header scroll behavior
+        let lastScroll = 0;
+        const header = document.querySelector('header');
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > lastScroll && currentScroll > 100) {
+                // Scrolling down & past the threshold
+                header.classList.add('hidden');
+            } else {
+                // Scrolling up
+                header.classList.remove('hidden');
+            }
+            
+            lastScroll = currentScroll;
+        });
+    </script>
+</body>
+</html>

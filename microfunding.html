@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funding Details - Planet WISE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="details.css">
+    <style>
+        .funding-container {
+            max-width: 800px;
+            margin: 4rem auto;
+            padding: 2rem;
+            background: #fff8dc;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .page-title {
+            color: #004d00;
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .form-section {
+            margin-bottom: 2rem;
+            background: #e8f4f8;
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .form-section h2 {
+            color: #004d00;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #004d00;
+            padding-bottom: 0.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #004d00;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem 1.25rem;
+            border: 2px solid #004d00;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: 'Poppins', sans-serif;
+            background: white;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            box-shadow: 0 4px 8px rgba(0, 77, 0, 0.2);
+            transform: translateY(-2px);
+            border-color: #006600;
+        }
+
+        .form-group input[type="file"] {
+            padding: 0.5rem;
+            border: 2px dashed #004d00;
+            background: white;
+        }
+
+        .requirements-link {
+            color: #004d00;
+            text-decoration: underline;
+            margin-bottom: 1rem;
+            display: inline-block;
+            transition: all 0.2s ease;
+            font-weight: 600;
+        }
+
+        .requirements-link:hover {
+            color: #006600;
+            text-decoration: none;
+        }
+
+        .submit-btn {
+            background: #004d00;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: 600;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background: #006600;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 77, 0, 0.2);
+        }
+
+        .checkbox-group {
+            margin: 2rem 0;
+            padding: 1rem;
+            background: #e8f4f8;
+            border-radius: 8px;
+        }
+
+        .checkbox-group label {
+            color: #004d00;
+            margin-left: 0.5rem;
+            font-weight: 500;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            transform: scale(1.2);
+        }
+
+        /* Header scroll behavior */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            transition: transform 0.3s ease;
+            z-index: 1000;
+        }
+
+        header.hidden {
+            transform: translateY(-100%);
+        }
+
+        body {
+            padding-top: 60px; /* Add padding to account for fixed header */
+        }
+    </style>
+</head>
+<body>
+    <header class="bg-primary text-primary-foreground shadow-lg">
+        <div class="container">
+            <a href="index.html" class="logo">Planet WISE</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="accounts.html">My Progress</a></li>>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="funding-container">
+            <h1 class="page-title">Funding Details</h1>
+            <p style="color: black;">Please review our <a href="funding-requirements.pdf" class="requirements-link">requirements for funding</a> before submitting your application.</p>
+            <form id="fundingForm">
+                <div class="form-section">
+                    <h2>Initiative Details</h2>
+                    <div class="form-group">
+                        <label for="initiativeName">Name of Initiative</label>
+                        <input type="text" id="initiativeName" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="registrationDate">Date of Registration</label>
+                        <input type="date" id="registrationDate" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="location">Place/Location</label>
+                        <input type="text" id="location" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fundTarget">Fund Target (USD)</label>
+                        <input type="number" id="fundTarget" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="initiative-aim">Aim of the Initiative</label>
+                        <textarea id="initiative-aim" rows="4" required></textarea>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h2>Bank Details</h2>
+                    <div class="form-group">
+                        <label for="accountName">Account Holder Name</label>
+                        <input type="text" id="accountName" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="accountNumber">Account Number</label>
+                        <input type="text" id="accountNumber" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bankName">Bank Name</label>
+                        <input type="text" id="bankName" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="swiftCode">SWIFT/BIC Code</label>
+                        <input type="text" id="swiftCode" required>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h2>Lead Contact Information</h2>
+                    <div class="form-group">
+                        <label for="leadName">Full Name</label>
+                        <input type="text" id="leadName" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="leadEmail">Email</label>
+                        <input type="email" id="leadEmail" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="leadPhone">Phone Number</label>
+                        <input type="tel" id="leadPhone" required>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h2>Nominees</h2>
+                    <div class="form-group">
+                        <label for="nominee1">Nominee 1 (Full Name)</label>
+                        <input type="text" id="nominee1" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nominee2">Nominee 2 (Full Name)</label>
+                        <input type="text" id="nominee2" required>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h2>Required Documents</h2>
+                    <div class="form-group">
+                        <label for="registration">Registration Certificate</label>
+                        <input type="file" id="registration" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="proposal">Project Proposal</label>
+                        <input type="file" id="proposal" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="budget">Detailed Budget Plan</label>
+                        <input type="file" id="budget" required>
+                    </div>
+                </div>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="termsAgree" required>
+                    <label for="termsAgree">I confirm that all provided information is accurate and complete</label>
+                </div>
+
+                <button type="submit" class="submit-btn">Submit Application</button>
+            </form>
+        </div>
+    </main>
+
+    <footer class="bg-primary text-primary-foreground">
+        <div class="container">
+            <p>&copy; 2023 Planet WISE. All rights reserved.</p>
+            <p>Empowering sustainable development through collaboration and innovation.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('fundingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Your funding application has been submitted successfully. We will review and get back to you soon.');
+            this.reset();
+        });
+
+        // Header scroll behavior
+        let lastScrollPosition = 0;
+        const header = document.querySelector('header');
+        
+        window.addEventListener('scroll', () => {
+            const currentScrollPosition = window.pageYOffset;
+            
+            if (currentScrollPosition > lastScrollPosition) {
+                // Scrolling down
+                header.classList.add('hidden');
+            } else {
+                // Scrolling up
+                header.classList.remove('hidden');
+            }
+            
+            lastScrollPosition = currentScrollPosition;
+        });
+    </script>
+</body>
+</html>

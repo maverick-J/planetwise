@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Partners or Volunteers - Planet WISE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="lists.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="partvol.js"></script>
+    <style>
+        .page-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #004d00;
+            margin-bottom: 2rem;
+            padding-top: 100px;
+            text-align: center;
+        }
+
+        .options-grid {
+            max-width: 1200px;
+            margin: 4rem auto;
+            display: flex;
+            flex-direction: row;
+            gap: 2rem;
+            align-items: stretch;
+            justify-content: center;
+        }
+
+        .option-card {
+            width: 100%;
+            max-width: 350px;
+            padding: 3rem;
+            text-align: center;
+            background: #fff8dc;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .option-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+            background: #ffefba;
+        }
+
+        .option-card .icon {
+            width: 64px;
+            height: 64px;
+            color: #004d00;
+            margin-bottom: 1rem;
+        }
+
+        .option-card h2 {
+            font-size: 1.8rem;
+            margin: 1.5rem 0;
+            color: #004d00;
+        }
+
+        .option-card p {
+            font-size: 1.1rem;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .page-title, .option-card {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+    </style>
+</head>
+<body>
+    <header class="bg-primary text-primary-foreground shadow-lg">
+        <div class="container">
+            <a href="index.html" class="logo">Planet WISE</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="accounts.html">My Progress</a></li>>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1 class="page-title" style="color: #ffffff;">Find Partners or Volunteers</h1>
+        <div class="options-grid">
+            <a href="part.html" class="option-card" style="animation-delay: 0.2s;">
+                <i data-lucide="handshake" class="icon"></i>
+                <h2>Partner</h2>
+                <p>Find organizations to partner with on sustainable initiatives.</p>
+            </a>
+            <a href="volunteer.html" class="option-card" style="animation-delay: 0.4s;">
+                <i data-lucide="users" class="icon"></i>
+                <h2>Volunteer</h2>
+                <p>Find volunteering opportunities to support sustainable causes.</p>
+            </a>
+        </div>
+    </main>
+
+    <footer class="bg-primary text-primary-foreground">
+        <div class="container">
+            <p>&copy; 2023 Planet WISE. All rights reserved.</p>
+            <p>Empowering sustainable development through collaboration and innovation.</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

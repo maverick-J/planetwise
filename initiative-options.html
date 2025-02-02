@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Initiative Options - Planet WISE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="initops.js" defer></script>
+    <style>
+        .page-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #183d29;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+
+        .option-card {
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            text-decoration: none;
+            color: #333333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .option-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .option-card .icon {
+            color: #183d29;
+            margin-bottom: 1rem;
+        }
+
+        .option-card h2 {
+            color: #183d29;
+            font-weight: 600;
+        }
+
+        .option-card p {
+            color: #666666;
+            line-height: 1.6;
+        }
+
+        footer {
+            margin-top: 4rem;
+            padding: 2rem 0;
+        }
+
+        footer p {
+            text-align: center;
+            margin: 0.5rem 0;
+        }
+    </style>
+</head>
+<body>
+    <header class="bg-primary text-primary-foreground shadow-lg">
+        <div class="container">
+            <a href="index.html" class="logo">Planet WISE</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>>
+                    <li><a href="accounts.html">My Progress</a></li>>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1 class="page-title" style="color: #ffffff;">Initiative Options</h1>
+        <div class="options-grid" style="max-width: 1200px; margin: 4rem auto; display: flex; flex-direction: row; gap: 2rem; align-items: stretch; justify-content: center;">
+            <a href="microfunding.html" class="option-card" style="width: 100%; max-width: 350px; padding: 3rem; text-align: center; background-color: #ffffff;">
+                <i data-lucide="piggy-bank" class="icon" style="width: 64px; height: 64px;"></i>
+                <h2 style="font-size: 1.8rem; margin: 1.5rem 0;">Register for Microfunding</h2>
+                <p style="font-size: 1.1rem;">Apply for financial support for your sustainable development initiative.</p>
+            </a>
+            <a href="part-vol.html" class="option-card" style="width: 100%; max-width: 350px; padding: 3rem; text-align: center; background-color: #ffffff;">
+                <i data-lucide="users" class="icon" style="width: 64px; height: 64px;"></i>
+                <h2 style="font-size: 1.8rem; margin: 1.5rem 0;">Find Partners/Volunteers</h2>
+                <p style="font-size: 1.1rem;">Connect with like-minded individuals and organizations to support your cause.</p>
+            </a>
+            <a href="impact.html" class="option-card" style="width: 100%; max-width: 350px; padding: 3rem; text-align: center; background-color: #ffffff;">
+                <i data-lucide="map-pin" class="icon" style="width: 64px; height: 64px;"></i>
+                <h2 style="font-size: 1.8rem; margin: 1.5rem 0;">Find Local Impact Makers</h2>
+                <p style="font-size: 1.1rem;">Discover and collaborate with changemakers in your community.</p>
+            </a>
+        </div>
+    </main>
+
+    <footer class="bg-primary text-primary-foreground">
+        <div class="container">
+            <p>&copy; 2023 Planet WISE. All rights reserved.</p>
+            <p>Empowering sustainable development through collaboration and innovation.</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

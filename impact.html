@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Impact Makers - Planet WISE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="lists.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="styles.js"></script>
+    <style>
+        .header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            transition: transform 0.3s ease-in-out;
+            z-index: 1000;
+        }
+        
+        .header--hidden {
+            transform: translateY(-100%);
+        }
+
+        .page-title {
+            margin-top: 100px; /* Add space below fixed header */
+            text-align: center;
+            font-size: 2.5rem;
+            color: #183d29;
+            padding: 2rem 0;
+        }
+
+        .card {
+            background: #ffffff;
+            position: relative;
+        }
+
+        .card h2 {
+            color: #183d29;
+        }
+
+        .card p {
+            color: #333333;
+        }
+
+        .card strong {
+            color: #183d29;
+        }
+
+        .sdg-achievements {
+            background: #f8f9fa;
+            color: #333333;
+        }
+
+        .btn-sm {
+            background: #183d29;
+            color: #ffffff;
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            display: inline-block;
+            margin: 0.25rem;
+        }
+
+        .contact-btn {
+            position: absolute;
+            bottom: 2rem;
+            left: 2rem;
+            background: #1e88e5;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-btn:hover {
+            background: #1565c0;
+        }
+    </style>
+</head>
+<body>
+    <header class="header bg-primary text-primary-foreground shadow-lg">
+        <div class="container">
+            <a href="index.html" class="logo">Planet WISE</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="accounts.html">My Progress</a></li>>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1 class="page-title" style="color: #ffffff;">Local Impact Makers</h1>
+        
+        <div class="options-grid" style="max-width: 1200px; margin: 4rem auto; display: flex; flex-direction: column; gap: 2rem;">
+            <div class="card" style="width: 100%; padding: 2rem; display: flex;">
+                <div style="width: 100px; height: 100px; margin-right: 2rem;">
+                    <i data-lucide="leaf" style="width: 100%; height: 100%; color: #183d29;"></i>
+                </div>
+                <div style="flex: 1; text-align: right;">
+                    <h2 style="font-size: 1.8rem; margin-bottom: 1.5rem;">GreenEarth</h2>
+                    <div style="margin-bottom: 1.5rem;">
+                        <p><strong>Location:</strong> Downtown Area</p>
+                        <p><strong>Focus Area:</strong> Environmental Sustainability</p>
+                        <p><strong>Contact:</strong> contact@greenearth.org</p>
+                    </div>
+                    <div class="sdg-achievements" style="padding: 1rem; border-radius: 8px; background-color: #fff8dc;">
+                        <h3 style="font-size: 1.2rem; font-weight: 600; margin-bottom: 1rem;">SDG Achievements:</h3>
+                        <div style="margin-bottom: 1rem;">
+                            <span class="btn-sm">SDG 13: Climate Action</span>
+                            <span class="btn-sm">SDG 15: Life on Land</span>
+                        </div>
+                        <p>Successfully planted 10,000 trees in urban areas and reduced local carbon emissions by 15%</p>
+                    </div>
+                </div>
+                <a href="mailto:contact@greenearth.org" class="contact-btn">Contact Us</a>
+            </div>
+
+            <div class="card" style="width: 100%; padding: 2rem; display: flex;">
+                <div style="width: 100px; height: 100px; margin-right: 2rem;">
+                    <i data-lucide="heart" style="width: 100%; height: 100%; color: #183d29;"></i>
+                </div>
+                <div style="flex: 1; text-align: right;">
+                    <h2 style="font-size: 1.8rem; margin-bottom: 1.5rem;">HealthDeals</h2>
+                    <div style="margin-bottom: 1.5rem;">
+                        <p><strong>Location:</strong> East Side</p>
+                        <p><strong>Focus Area:</strong> Healthcare Access</p>
+                        <p><strong>Contact:</strong> info@healthalliance.org</p>
+                    </div>
+                    <div class="sdg-achievements" style="padding: 1rem; border-radius: 8px; background-color: #fff8dc;">
+                        <h3 style="font-size: 1.2rem; font-weight: 600; margin-bottom: 1rem;">SDG Achievements:</h3>
+                        <div style="margin-bottom: 1rem;">
+                            <span class="btn-sm">SDG 3: Good Health</span>
+                            <span class="btn-sm">SDG 10: Reduced Inequalities</span>
+                        </div>
+                        <p>Provided free healthcare services to 5,000+ underprivileged community members</p>
+                    </div>
+                </div>
+                <a href="mailto:info@healthalliance.org" class="contact-btn">Contact Us</a>
+            </div>
+
+            <div class="card" style="width: 100%; padding: 2rem; display: flex;">
+                <div style="width: 100px; height: 100px; margin-right: 2rem;">
+                    <i data-lucide="book-open" style="width: 100%; height: 100%; color: #183d29;"></i>
+                </div>
+                <div style="flex: 1; text-align: right;">
+                    <h2 style="font-size: 1.8rem; margin-bottom: 1.5rem;">EduCom</h2>
+                    <div style="margin-bottom: 1.5rem;">
+                        <p><strong>Location:</strong> West District</p>
+                        <p><strong>Focus Area:</strong> Education</p>
+                        <p><strong>Contact:</strong> hello@eduforall.org</p>
+                    </div>
+                    <div class="sdg-achievements" style="padding: 1rem; border-radius: 8px; background-color: #fff8dc;">
+                        <h3 style="font-size: 1.2rem; font-weight: 600; margin-bottom: 1rem;">SDG Achievements:</h3>
+                        <div style="margin-bottom: 1rem;">
+                            <span class="btn-sm">SDG 4: Quality Education</span>
+                            <span class="btn-sm">SDG 5: Gender Equality</span>
+                        </div>
+                        <p>Established 3 community learning centers and provided scholarships to 200 girls</p>
+                    </div>
+                </div>
+                <a href="mailto:hello@eduforall.org" class="contact-btn">Contact Now</a>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <a href="initiative-options.html" class="btn">Back to Options</a>
+        </div>
+    </main>
+
+    <footer class="bg-primary text-primary-foreground">
+        <div class="container">
+            <p>&copy; 2023 Planet WISE. All rights reserved.</p>
+            <p>Empowering sustainable development through collaboration and innovation.</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        // Header hide/show on scroll
+        let lastScroll = 0;
+        const header = document.querySelector('.header');
+        
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll <= 0) {
+                header.classList.remove('header--hidden');
+                return;
+            }
+            
+            if (currentScroll > lastScroll && !header.classList.contains('header--hidden')) {
+                // Scrolling down
+                header.classList.add('header--hidden');
+            } else if (currentScroll < lastScroll && header.classList.contains('header--hidden')) {
+                // Scrolling up
+                header.classList.remove('header--hidden');
+            }
+            
+            lastScroll = currentScroll;
+        });
+    </script>
+</body>
+</html>

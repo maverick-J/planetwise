@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planet WISE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            transition: transform 0.3s ease-in-out;
+            z-index: 1000;
+        }
+        header.hidden {
+            transform: translateY(-100%);
+        }
+        main {
+            margin-top: 80px;
+        }
+    </style>
+</head>
+<body>
+    <header class="bg-primary text-primary-foreground shadow-lg" id="header">
+        <div class="container">
+            <a href="index.html" class="logo">Planet WISE</a>
+            <nav>
+                <ul>
+                
+                    <li><a href="register.html">Register</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="intro">
+            <h1>Welcome to Planet WISE</h1>
+            <p>Join us in our mission to achieve the Sustainable Development Goals. Whether you're an initiative, a fund provider, or an organization, your contribution matters.</p>
+        </section>
+
+        <section class="grid" style="grid-template-columns: repeat(3, 1fr); gap: 20px;">
+            <div class="card">
+                <i data-lucide="leaf" class="icon"></i>
+                <h2>Crowdsourced Microfunding</h2>
+                <p>Support grassroots projects tackling poverty, climate change, and justice.</p>
+                <a href="fundingabout.html" class="btn">Learn More</a>
+            </div>
+            <div class="card">
+                <i data-lucide="users" class="icon"></i>
+                <h2>Local Impact Directory</h2>
+                <p>Find organizations and individuals making a difference in your community.</p>
+                <a href="impactabout.html" class="btn">Learn More</a>
+            </div>
+            <div class="card">
+                <i data-lucide="handshake" class="icon"></i>
+                <h2>Volunteer & Partnerships</h2>
+                <p>Connect with experts, NGOs, and organizations to collaborate on SDG projects.</p>
+                <a href="volunteerabout.html" class="btn">Learn More</a>
+            </div>
+            <div class="card training" style="grid-column: 1/2; background: rgba(244, 208, 63, 0.2);">
+                <i data-lucide="book-open" class="icon"></i>
+                <h2>Training & Knowledge Hub</h2>
+                <p>Access courses and resources on finance, legal aid, sustainability, and more.</p>
+                <a href="knowledge.html" class="btn">Enroll Now</a>
+            </div>
+            <div style="grid-column: 2/3; display: flex; justify-content: center; align-items: center;">
+                <img src="https://placehold.co/200x200/183d29/FFFFFF/png?text=Planet+WISE" alt="Planet WISE Logo" style="width: 150px; height: 150px; border-radius: 50%; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);">
+            </div>
+            <div class="card sdg-tracker" style="grid-column: 3/4; background: rgba(244, 208, 63, 0.2);">
+                <i data-lucide="bar-chart-3" class="icon"></i>
+                <h2>Live SDG Tracker</h2>
+                <p>Monitor and contribute to global progress on the Sustainable Development Goals.</p>
+                <a href="sdg-places.html" class="btn">Show Graph</a>
+            </div>
+        </section>
+        <section class="cta" style="grid-column: 2/3; margin-top: 20px;">
+            <a href="register.html" class="btn btn-large">Join the Movement</a>
+        </section>
+    </main>
+
+    <footer class="bg-primary text-primary-foreground">
+        <div class="container">
+            <p>&copy; 2023 Planet WISE. All rights reserved.</p>
+            <p>Empowering sustainable development through collaboration and innovation.</p>
+        </div>
+    </footer>
+
+    <script src="styles.js"></script>
+    <script>
+        lucide.createIcons();
+        
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            const header = document.querySelector('header');
+            
+            if (currentScroll > lastScroll && currentScroll > 100) {
+                header.classList.add('hidden');
+            } else {
+                header.classList.remove('hidden');
+            }
+            lastScroll = currentScroll;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose an Initiative to Fund - Planet WISE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="lists.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .initiatives-grid {
+            display: grid;
+            gap: 1.5rem;
+            margin: 2rem 0;
+            max-width: 1200px;
+            margin: 4rem auto;
+        }
+
+        .initiative-card {
+            background: #fff8dc;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 1.25rem;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .initiative-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .initiative-title {
+            font-size: 1.5rem;
+            color: #004d00;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            text-align: left;
+        }
+
+        .initiative-details {
+            margin: 0;
+            line-height: 1.4;
+            background: #e8f4f8;
+            padding: 0.75rem;
+            border-radius: 8px;
+            color: #1a1a1a;
+        }
+
+        .initiative-details p {
+            margin: 0.25rem 0;
+        }
+
+        .sdg-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin: 0.5rem 0;
+        }
+
+        .sdg-tag {
+            background: #fff9c4;
+            color: #1a1a1a;
+            padding: 0.15rem 0.5rem;
+            border-radius: 999px;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+
+        .more-details-btn {
+            background: #006400;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 0.5rem;
+            transition: all 0.2s ease;
+            font-weight: 600;
+            align-self: flex-start;
+        }
+
+        .more-details-btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        header.hidden {
+            transform: translateY(-100%);
+        }
+    </style>
+</head>
+<body>
+    <header class="bg-primary text-primary-foreground shadow-lg">
+        <div class="container">
+            <a href="index.html" class="logo">Planet WISE</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container" style="margin-top: 80px;">
+        <h1 class="page-title">Choose an Initiative to Fund</h1>
+
+        <div class="initiatives-grid">
+            <div class="initiative-card">
+                <h2 class="initiative-title">Clean Water Access in Rural Communities</h2>
+                <div class="initiative-details">
+                    <p><strong>In-charge:</strong> WaterLife Foundation</p>
+                    <p><strong>Area:</strong> Rajasthan, India</p>
+                </div>
+                <div class="sdg-tags">
+                    <span class="sdg-tag">SDG 6</span>
+                    <span class="sdg-tag">SDG 3</span>
+                </div>
+                <a href="fund-details.html" class="more-details-btn">More Details</a>
+            </div>
+
+            <div class="initiative-card">
+                <h2 class="initiative-title">Solar Power for Education</h2>
+                <div class="initiative-details">
+                    <p><strong>In-charge:</strong> EduLight International</p>
+                    <p><strong>Area:</strong> Nairobi, Kenya</p>
+                </div>
+                <div class="sdg-tags">
+                    <span class="sdg-tag">SDG 7</span>
+                    <span class="sdg-tag">SDG 4</span>
+                </div>
+                <a href="fund-details.html" class="more-details-btn">More Details</a>
+            </div>
+
+            <div class="initiative-card">
+                <h2 class="initiative-title">Women's Entrepreneurship Program</h2>
+                <div class="initiative-details">
+                    <p><strong>In-charge:</strong> EmpowerHer Coalition</p>
+                    <p><strong>Area:</strong> Lagos, Nigeria</p>
+                </div>
+                <div class="sdg-tags">
+                    <span class="sdg-tag">SDG 5</span>
+                    <span class="sdg-tag">SDG 8</span>
+                </div>
+                <a href="fund-details.html" class="more-details-btn">More Details</a>
+            </div>
+
+            <div class="initiative-card">
+                <h2 class="initiative-title">Sustainable Agriculture Initiative</h2>
+                <div class="initiative-details">
+                    <p><strong>In-charge:</strong> GreenHarvest Cooperative</p>
+                    <p><strong>Area:</strong> Medellin, Colombia</p>
+                </div>
+                <div class="sdg-tags">
+                    <span class="sdg-tag">SDG 2</span>
+                    <span class="sdg-tag">SDG 13</span>
+                </div>
+                <a href="fund-details.html" class="more-details-btn">More Details</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-primary text-primary-foreground">
+        <div class="container">
+            <p>&copy; 2023 Planet WISE. All rights reserved.</p>
+            <p>Empowering sustainable development through collaboration and innovation.</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        // Header hide on scroll
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            const header = document.querySelector('header');
+            
+            if (currentScroll > lastScroll && currentScroll > 100) {
+                // Scrolling down & past the 100px mark
+                header.classList.add('hidden');
+            } else {
+                // Scrolling up
+                header.classList.remove('hidden');
+            }
+            lastScroll = currentScroll;
+        });
+    </script>
+    <script src="lists.js"></script>
+</body>
+</html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partner Organizations - Planet WISE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="lists.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .partner-grid {
+            max-width: 1200px;
+            margin: 4rem auto;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            padding: 0 2rem;
+        }
+
+        .partner-card {
+            background: #fff;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 2px solid #d0e8d0;
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+
+        .partner-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        .partner-info {
+            flex: 1;
+        }
+
+        .partner-title {
+            font-size: 2rem;
+            color: #003300;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .sdg-section {
+            flex: 2;
+            background: #ffffd0;
+            padding: 1.5rem 2rem;
+            border-radius: 12px;
+        }
+
+        .sdg-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: #006600;
+        }
+
+        .sdg-list {
+            display: flex;
+            gap: 2rem;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .sdg-list li {
+            padding: 0.8rem 1.5rem;
+            background: white;
+            border-radius: 8px;
+            border: 1px solid #d0e8d0;
+            color: #004d00;
+            font-weight: 500;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .view-btn {
+            background: #004d00;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            margin-left: auto;
+        }
+
+        .view-btn:hover {
+            background: #006600;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .back-btn-container {
+            text-align: center;
+            margin: 4rem 0;
+        }
+
+        .back-btn {
+            background: #0000FF;
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .back-btn:hover {
+            background: #0000CC;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .page-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #003300;
+            margin: 3rem 0;
+            font-weight: 700;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            transition: transform 0.3s ease;
+            z-index: 1000;
+        }
+
+        header.hidden {
+            transform: translateY(-100%);
+        }
+
+        body {
+            padding-top: 80px; /* Add padding to account for fixed header */
+        }
+    </style>
+</head>
+<body>
+    <header class="bg-primary text-primary-foreground shadow-lg">
+        <div class="container">
+            <a href="index.html" class="logo">Planet WISE</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="accounts.html">My Progress</a></li>>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1 class="page-title" style="color: white;">Partner Organizations</h1>
+        <div class="partner-grid">
+            <div class="partner-card">
+                <div class="partner-info">
+                    <h2 class="partner-title">EcoSolutions Inc.</h2>
+                </div>
+                <div class="sdg-section">
+                    <h3 class="sdg-title">Previous SDG Works:</h3>
+                    <ul class="sdg-list">
+                        <li>Clean Water and Sanitation</li>
+                        <li>Climate Action</li>
+                        <li>Sustainable Cities</li>
+                    </ul>
+                </div>
+                <a href="#" class="view-btn">View Details</a>
+            </div>
+
+            <div class="partner-card">
+                <div class="partner-info">
+                    <h2 class="partner-title">GreenTech Innovations</h2>
+                </div>
+                <div class="sdg-section">
+                    <h3 class="sdg-title">Previous SDG Works:</h3>
+                    <ul class="sdg-list">
+                        <li>Affordable Clean Energy</li>
+                        <li>Industry Innovation</li>
+                        <li>Responsible Consumption</li>
+                    </ul>
+                </div>
+                <a href="#" class="view-btn">View Details</a>
+            </div>
+
+            <div class="partner-card">
+                <div class="partner-info">
+                    <h2 class="partner-title">Global Health Partners</h2>
+                </div>
+                <div class="sdg-section">
+                    <h3 class="sdg-title">Previous SDG Works:</h3>
+                    <ul class="sdg-list">
+                        <li>Good Health and Well-being</li>
+                        <li>Quality Education</li>
+                        <li>Zero Hunger</li>
+                    </ul>
+                </div>
+                <a href="#" class="view-btn">View Details</a>
+            </div>
+        </div>
+
+        <div class="back-btn-container">
+            <a href="part-vol.html" class="back-btn">Back to Selection</a>
+        </div>
+    </main>
+
+    <footer class="bg-primary text-primary-foreground">
+        <div class="container">
+            <p>&copy; 2023 Planet WISE. All rights reserved.</p>
+            <p>Empowering sustainable development through collaboration and innovation.</p>
+        </div>
+    </footer>
+
+    <script src="partner.js"></script>
+    <script>
+        lucide.createIcons();
+
+        let lastScrollY = window.scrollY;
+
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > lastScrollY) {
+                header.classList.add('hidden');
+            } else {
+                header.classList.remove('hidden');
+            }
+            lastScrollY = window.scrollY;
+        });
+    </script>
+</body>
+</html>

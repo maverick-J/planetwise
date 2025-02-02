@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volunteer & Partnerships - Planet WISE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .hero-section {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            padding: 8rem 2rem;
+            text-align: center;
+            margin-bottom: 0;
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hero-section h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-section p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .content-section {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            background: white;
+            line-height: 1.8;
+        }
+
+        .content-section h2 {
+            color: #183d29;
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .content-section p {
+            color: #333;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .feature-card {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-card h3 {
+            color: #183d29;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #183d29 0%, #2c5744 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 15px;
+            margin: 3rem 0;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        .highlight-box h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="bg-primary text-primary-foreground shadow-lg" id="header">
+        <div class="container">
+            <a href="index.html" class="logo">Planet WISE</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="register.html">Register</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <h1>Volunteer & Partnerships</h1>
+            <p>Join forces with change-makers worldwide to create lasting impact and accelerate progress towards the Sustainable Development Goals</p>
+        </section>
+
+        <section class="content-section">
+            <h2>Empowering Change Through Collaboration</h2>
+            <p>At Planet WISE, we believe that achieving the Sustainable Development Goals requires the collective effort of passionate individuals and forward-thinking organizations. Our platform serves as a bridge, connecting volunteers with meaningful opportunities and facilitating partnerships that drive sustainable change.</p>
+
+            <div class="highlight-box">
+                <h3>Why Join Our Network?</h3>
+                <p style="color: white;">By becoming part of our global community, you gain access to a curated ecosystem of opportunities, resources, and partnerships that align with your vision for a sustainable future.</p>
+            </div>
+            <script type="module" src="abouts.js"></script>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>For Volunteers</h3>
+                    <p>• Access high-impact volunteer opportunities<br>
+                       • Develop new skills and expertise<br>
+                       • Connect with like-minded individuals<br>
+                       • Track your contribution to SDGs</p>
+                </div>
+                <div class="feature-card">
+                    <h3>For Organizations</h3>
+                    <p>• Find skilled and passionate volunteers<br>
+                       • Build strategic partnerships<br>
+                       • Access shared resources and knowledge<br>
+                       • Scale your impact globally</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Skill Development</h3>
+                    <p>• Professional mentorship programs<br>
+                       • Specialized training workshops<br>
+                       • Leadership opportunities<br>
+                       • Certificate programs</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Impact Measurement</h3>
+                    <p>• Track volunteer hours and impact<br>
+                       • Generate impact reports<br>
+                       • Showcase SDG contributions<br>
+                       • Share success stories</p>
+                </div>
+            </div>
+
+            <p>Our platform facilitates meaningful connections between volunteers and organizations, ensuring that every partnership contributes effectively to the SDGs. Through our innovative matching system, we help you find opportunities and partners that align perfectly with your skills, interests, and impact goals.</p>
+
+            <p>Whether you're an individual looking to make a difference or an organization seeking to expand your impact, Planet WISE provides the tools, resources, and connections you need to succeed in your sustainable development journey.</p>
+        </section>
+    </main>
+
+    <footer class="bg-primary text-primary-foreground">
+        <div class="container">
+            <p>&copy; 2023 Planet WISE. All rights reserved.</p>
+            <p>Empowering sustainable development through collaboration and innovation.</p>
+        </div>
+    </footer>
+
+    <script>
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            const header = document.querySelector('header');
+            
+            if (currentScroll > lastScroll && currentScroll > 100) {
+                header.classList.add('hidden');
+            } else {
+                header.classList.remove('hidden');
+            }
+            lastScroll = currentScroll;
+        });
+    </script>
+</body>
+</html>

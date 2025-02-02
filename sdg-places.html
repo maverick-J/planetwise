@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SDG Places - Planet WISE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="places.css">
+    <style>
+        .places-grid {
+            padding: 2rem 0;
+        }
+        
+        .place-list {
+            display: flex;
+            flex-direction: row;
+            gap: 2rem;
+            list-style: none;
+            padding: 0;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scroll-behavior: smooth;
+            padding-bottom: 1rem;
+        }
+
+        .place-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            padding: 1.5rem;
+            margin: 0;
+            background: rgb(255, 255, 255);
+            min-width: 280px;
+            flex-shrink: 0;
+        }
+
+        .place-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .place-card a {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .place-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #000000;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .place-card .flag {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .view-details {
+            display: inline-block;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .place-card:hover .view-details {
+            color: #f4d03f;
+        }
+
+        .intro {
+            margin-bottom: 3rem;
+            padding: 3rem 2rem;
+        }
+
+        .search-container {
+            margin: 2rem 0 3rem 0;
+            padding: 1.5rem;
+        }
+
+        .search-input {
+            font-size: 1.1rem;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="bg-primary text-primary-foreground shadow-lg">
+        <div class="container">
+            <a href="index.html" class="logo">Planet WISE</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="intro glass">
+            <h1 class="page-title">Explore SDG Progress by City</h1>
+            <p class="subtitle">Discover how different cities around the world are progressing towards the UN Sustainable Development Goals</p>
+        </section>
+
+        <div class="search-container glass" style="background: rgba(254, 254, 198, 0.83);">
+            <div class="search-bar">
+                <i class="search-icon icon-visible">🔍</i>
+                <input type="text" id="place-search" placeholder="Search for a city..." class="search-input" style="background: rgba(57, 111, 70, 0.589); color: black; ::placeholder { color: grey; }">
+            </div>
+        </div>
+
+        <div class="places-grid">
+            <ul id="place-list" class="place-list">
+                <li class="place-card glass" style="color: black;">
+                    <a href="sdg-graph.html?place=New%20York" style="color: black;">
+                        <h3><img src="https://flagcdn.com/w40/us.png" alt="USA flag" class="flag">New York</h3>
+                        <span class="view-details icon-visible" style="color: darkgreen;">View SDG Progress →</span>
+                    </a>
+                </li>
+                <li class="place-card glass" style="color: black;">
+                    <a href="sdg-graph.html?place=Tokyo" style="color: black;">
+                        <h3><img src="https://flagcdn.com/w40/jp.png" alt="Japan flag" class="flag">Tokyo</h3>
+                        <span class="view-details icon-visible" style="color: darkgreen;">View SDG Progress →</span>
+                    </a>
+                </li>
+                <li class="place-card glass" style="color: black;">
+                    <a href="sdg-graph.html?place=London" style="color: black;">
+                        <h3><img src="https://flagcdn.com/w40/gb.png" alt="UK flag" class="flag">London</h3>
+                        <span class="view-details icon-visible" style="color: darkgreen;">View SDG Progress →</span>
+                    </a>
+                </li>
+                <li class="place-card glass" style="color: black;">
+                    <a href="sdg-graph.html?place=Paris" style="color: black;">
+                        <h3><img src="https://flagcdn.com/w40/fr.png" alt="France flag" class="flag">Paris</h3>
+                        <span class="view-details icon-visible" style="color: darkgreen;">View SDG Progress →</span>
+                    </a>
+                </li>
+                <li class="place-card glass" style="color: black;">
+                    <a href="sdg-graph.html?place=Sydney" style="color: black;">
+                        <h3><img src="https://flagcdn.com/w40/au.png" alt="Australia flag" class="flag">Sydney</h3>
+                        <span class="view-details icon-visible" style="color: darkgreen;">View SDG Progress →</span>
+                    </a>
+                </li>
+                <li class="place-card glass" style="color: black;">
+                    <a href="sdg-graph.html?place=Mumbai" style="color: black;">
+                        <h3><img src="https://flagcdn.com/w40/in.png" alt="India flag" class="flag">Mumbai</h3>
+                        <span class="view-details icon-visible" style="color: darkgreen;">View SDG Progress →</span>
+                    </a>
+                </li>
+                <li class="place-card glass" style="color: black;">
+                    <a href="sdg-graph.html?place=Rio%20de%20Janeiro" style="color: black;">
+                        <h3><img src="https://flagcdn.com/w40/br.png" alt="Brazil flag" class="flag">Rio de Janeiro</h3>
+                        <span class="view-details icon-visible" style="color: darkgreen;">View SDG Progress →</span>
+                    </a>
+                </li>
+                <li class="place-card glass" style="color: black;">
+                    <a href="sdg-graph.html?place=Cairo" style="color: black;">
+                        <h3><img src="https://flagcdn.com/w40/eg.png" alt="Egypt flag" class="flag">Cairo</h3>
+                        <span class="view-details icon-visible" style="color: darkgreen;">View SDG Progress →</span>
+                    </a>
+                </li>
+                <li class="place-card glass" style="color: black;">
+                    <a href="sdg-graph.html?place=Moscow" style="color: black;">
+                        <h3><img src="https://flagcdn.com/w40/ru.png" alt="Russia flag" class="flag">Moscow</h3>
+                        <span class="view-details icon-visible" style="color: darkgreen;">View SDG Progress →</span>
+                    </a>
+                </li>
+                <li class="place-card glass" style="color: black;">
+                    <a href="sdg-graph.html?place=Cape%20Town" style="color: black;">
+                        <h3><img src="https://flagcdn.com/w40/za.png" alt="South Africa flag" class="flag">Cape Town</h3>
+                        <span class="view-details icon-visible" style="color: darkgreen;">View SDG Progress →</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </main>
+
+    <footer class="bg-primary text-primary-foreground">
+        <div class="container">
+            <p>&copy; 2023 Planet WISE. All rights reserved.</p>
+            <p>Empowering sustainable development through collaboration and innovation.</p>
+        </div>
+    </footer>
+
+    <script src="places.js"></script>
+    <script src="lists.js"></script>
+</body>
+</html>

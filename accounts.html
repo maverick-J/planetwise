@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Progress - Planet WISE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .progress-container {
+            max-width: 1200px;
+            margin: 6rem auto;
+            padding: 2rem;
+            background-color: #f8e598;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .progress-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .progress-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .progress-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .progress-title {
+            color: #004d00;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            font-weight: 700;
+        }
+
+        .metric-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #004d00;
+            margin: 1rem 0;
+        }
+
+        .metric-label {
+            font-size: 1.2rem;
+            color: #444;
+            margin-bottom: 1rem;
+        }
+
+        .icon-container {
+            margin-bottom: 1rem;
+            background-color: #fff8dc;
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .icon {
+            width: 48px;
+            height: 48px;
+            color: #004d00;
+        }
+    </style>
+</head>
+<body>
+    <header class="header bg-primary text-primary-foreground shadow-lg">
+        <div class="container">
+            <a href="index.html" class="logo">Planet WISE</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="progress-container">
+            <h1 class="progress-title">Project Progress Overview</h1>
+            <div class="progress-grid">
+                <div class="progress-card">
+                    <div class="icon-container">
+                        <i data-lucide="milestone" class="icon"></i>
+                    </div>
+                    <div class="metric-value">15</div>
+                    <div class="metric-label">Initiative Milestones Completed</div>
+                </div>
+
+                <div class="progress-card">
+                    <div class="icon-container">
+                        <i data-lucide="piggy-bank" class="icon"></i>
+                    </div>
+                    <div class="metric-value">$125K</div>
+                    <div class="metric-label">Funds Used</div>
+                </div>
+
+                <div class="progress-card">
+                    <div class="icon-container">
+                        <i data-lucide="users" class="icon"></i>
+                    </div>
+                    <div class="metric-value">250+</div>
+                    <div class="metric-label">Active Volunteers</div>
+                </div>
+
+                <div class="progress-card">
+                    <div class="icon-container">
+                        <i data-lucide="target" class="icon"></i>
+                    </div>
+                    <div class="metric-value">8</div>
+                    <div class="metric-label">SDGs Impacted</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-primary text-primary-foreground">
+        <div class="container">
+            <p>&copy; 2023 Planet WISE. All rights reserved.</p>
+            <p>Empowering sustainable development through collaboration and innovation.</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+    <script src="accounts.js"></script>
+</body>
+</html>

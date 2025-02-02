@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Planet WISE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="loginpage.css">
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js";
+        import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-auth.js";
+        import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-firestore.js";
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyAdsCZvUCN3G5_6IABcrMW1g5t0SAhDU5w",
+            authDomain: "planetw-d0df6.firebaseapp.com",
+            projectId: "planetw-d0df6",
+            storageBucket: "planetw-d0df6.firebasestorage.app",
+            messagingSenderId: "283302144811",
+            appId: "1:283302144811:web:6a4a83543e9ed83917736e"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+
+        // Handle form submission
+        document.getElementById('registration-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const name = document.getElementById('name').value;
+            const userType = document.querySelector('input[name="userType"]:checked').value;
+
+            try {
+                // Create user account
+                const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+                const user = userCredential.user;
+
+                // Store additional user data in Firestore
+                await setDoc(doc(db, "users", user.uid), {
+                    name: name,
+                    email: email,
+                    userType: userType,
+                    createdAt: new Date().toISOString()
+                });
+
+                alert('Registration successful!');
+                
+                // Redirect based on user type
+                switch(userType) {
+                    case 'initiative':
+                        window.location.href = 'initiative-options.html';
+                        break;
+                    case 'organization':
+                        window.location.href = 'organization-options.html';
+                        break;
+                    case 'fund-provider':
+                        window.location.href = 'fund-provideroptions.html';
+                        break;
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Registration failed: ' + error.message);
+            }
+        });
+    </script>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            align-items: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            width: 100%;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        header.hidden {
+            transform: translateY(-100%);
+        }
+
+        header .container {
+            padding: 1rem 0;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        .form-group input {
+            border: 2px solid #183d29;
+            text-align: center;
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        
+        button[type="submit"].btn.btn-full {
+            background-color: #FFF9C4;
+            color: #183d29;
+            margin: 2rem auto;
+            width: 300px;
+            display: block;
+        }
+        
+        button[type="submit"].btn.btn-full:hover {
+            background-color: #FFF59D;
+        }
+
+        .register-container {
+            padding: 2rem;
+            min-height: calc(100vh - 160px);
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 80px; /* Add margin to account for fixed header */
+        }
+
+        .register-card {
+            width: 100%;
+            max-width: 1200px;
+            padding: 3rem;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        .form-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            width: 100%;
+            max-width: 400px;
+            margin: 1rem auto;
+            text-align: center;
+        }
+
+        .form-group label {
+            display: block;
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .role-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin: 2rem auto;
+            width: 100%;
+            max-width: 1000px;
+            justify-content: center;
+        }
+
+        .role-card {
+            background-color: #183d29;
+            color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 200px;
+            text-align: center;
+        }
+
+        .role-card:hover {
+            transform: translateY(-5px);
+            border-color: #ffffff;
+            background-color: #245c3f;
+        }
+
+        .role-card.selected {
+            border-color: #ffffff;
+            background-color: #245c3f;
+            box-shadow: 0 0 15px rgba(0, 123, 255, 0.7);
+        }
+
+        .role-card i {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .role-card h3 {
+            margin: 0.5rem 0;
+            font-size: 1.25rem;
+        }
+
+        footer {
+            width: 100%;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: auto;
+        }
+
+        .login-link {
+            text-align: center;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .login-link a {
+            color: #183d29;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header class="bg-primary text-primary-foreground shadow-lg">
+        <div class="container">
+            <a href="index.html" class="logo">Planet WISE</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="register-container">
+            <div class="card register-card">
+                <h2>Register with Planet WISE</h2>
+                <p>Join our community and contribute to the Sustainable Development Goals</p>
+                <form class="form-container" id="registration-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Choose your role:</label>
+                        <div class="role-cards">
+                            <div class="role-card">
+                                <input type="radio" name="userType" value="initiative" required style="display: none;">
+                                <i data-lucide="lightbulb" style="color: #FFFACD;"></i>
+                                <h3>Initiative</h3>
+                            </div>
+                            <div class="role-card">
+                                <input type="radio" name="userType" value="organization" required style="display: none;">
+                                <i data-lucide="building" style="color: #FFFACD;"></i>
+                                <h3>Organization</h3>
+                            </div>
+                            <div class="role-card">
+                                <input type="radio" name="userType" value="fund-provider" required style="display: none;">
+                                <i data-lucide="piggy-bank" style="color: #FFFACD;"></i>
+                                <h3>Fund Provider</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-full">Register</button>
+                    <div class="login-link">
+                        <span style="color: black;">Already have an account? <a href="login1.html" style="color: black;">Login here</a></span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-primary text-primary-foreground">
+        <div class="container">
+            <p>&copy; 2023 Planet WISE. All rights reserved.</p>
+            <p>Empowering sustainable development through collaboration and innovation.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        lucide.createIcons();
+        
+        // Add selection styling
+        document.querySelectorAll('.role-card').forEach(card => {
+            card.addEventListener('click', function() {
+                // Remove selected class from all cards
+                document.querySelectorAll('.role-card').forEach(c => {
+                    c.classList.remove('selected');
+                });
+                // Add selected class to clicked card and check its radio
+                this.classList.add('selected');
+                this.querySelector('input[type="radio"]').checked = true;
+            });
+        });
+
+        // Header hide on scroll
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            const header = document.querySelector('header');
+            
+            if (currentScroll > lastScroll && currentScroll > 100) {
+                // Scrolling down & past the 100px mark
+                header.classList.add('hidden');
+            } else {
+                // Scrolling up
+                header.classList.remove('hidden');
+            }
+            lastScroll = currentScroll;
+        });
+    </script>
+</body>
+</html>
